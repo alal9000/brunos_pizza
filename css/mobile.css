@@ -8,8 +8,9 @@
 body {
   font-family: Arial, sans-serif;
   color: #333;
-  margin: 20px;
   box-sizing: border-box;
+  margin: 0; /* Remove margin to avoid gaps */
+  padding: 0; /* Remove padding */
 }
 
 main {
@@ -18,14 +19,10 @@ main {
   margin-bottom: 20px;
 }
 
-header,
 nav,
-article,
-aside,
 footer {
   border-style: solid;
   border-color: #4caf50;
-  border-radius: 25px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -68,7 +65,7 @@ footer {
 /* Navigation */
 
 nav {
-  background-color: red; /* Solid red background */
+  background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0.5));
   border: none; /* Remove border */
   width: 100%; /* Take up the full width */
   display: flex;
@@ -110,6 +107,20 @@ nav ul {
   margin: 0;
   list-style-type: none;
   background-color: green;
+}
+
+footer {
+  background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0.5));
+  border: none;
+  width: 100%;
+  height: 250px;
+  margin-top: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 /* Forms */

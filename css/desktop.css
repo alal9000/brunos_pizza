@@ -1,8 +1,9 @@
 /* General */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 main {
@@ -11,14 +12,10 @@ main {
   margin-bottom: 20px;
 }
 
-header,
 nav,
-article,
-aside,
 footer {
-  border-style: solid;
+  border-style: dotted;
   border-color: #c90721;
-  border-radius: 25px;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -85,16 +82,17 @@ footer {
 /* Navigation */
 
 nav {
-  background-color: red; /* Solid red background */
-  border: none; /* Remove border */
-  width: 100%; /* Take up the full width */
+  background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0.5));
+  border: none;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 2em;
   line-height: 2em;
-  margin: 0; /* Remove margin to avoid gaps */
-  padding: 0; /* Remove padding */
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
 }
 
 nav ul {
@@ -117,6 +115,20 @@ nav ul a {
 
 nav ul a:hover {
   background-color: grey;
+}
+
+footer {
+  background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0.5));
+  border: none;
+  width: 100%;
+  height: 250px;
+  margin-top: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 /* Forms */
