@@ -1,0 +1,218 @@
+/* General Styles */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+header,
+nav,
+article,
+aside,
+footer {
+  border-style: solid;
+  border-color: #4caf50;
+  border-radius: 25px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  height: auto;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.2em;
+}
+
+/* Layout */
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.container-animation {
+  height: 70vh;
+}
+
+article,
+aside {
+  width: 100%;
+  margin-top: 20px;
+}
+
+footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Navigation */
+
+nav {
+  background-color: red; /* Solid red background */
+  border: none; /* Remove border */
+  width: 100%; /* Take up the full width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  line-height: 2em;
+  margin: 0; /* Remove margin to avoid gaps */
+  padding: 0; /* Remove padding */
+}
+
+nav ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+nav ul a {
+  display: block;
+  width: 6em;
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  border-right: 1px solid white;
+  padding: 5px;
+  text-align: center;
+}
+
+nav ul a:hover {
+  background-color: grey;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: green;
+}
+
+/* Forms */
+form {
+  max-width: 100%;
+  margin: auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type='submit'],
+input[type='reset'] {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+input[type='submit']:hover,
+input[type='reset']:hover {
+  background-color: #45a049;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid green;
+}
+
+thead {
+  background-color: #4caf50;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+caption {
+  font-size: 1.2em;
+  margin: 5px 0;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Images and Animations */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#profile {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* media queries for smaller screens */
+@media only screen and (max-width: 600px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  a {
+    padding: 8px 0;
+  }
+
+  form {
+    padding: 10px;
+  }
+}
