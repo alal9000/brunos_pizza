@@ -15,7 +15,6 @@ body {
 
 main {
   width: 100%;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -35,6 +34,14 @@ header h1 {
   padding: 10px;
 }
 
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
 /* Navigation */
 
 nav {
@@ -43,11 +50,12 @@ nav {
   width: 100%; /* Take up the full width */
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 2em;
   line-height: 2em;
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 nav ul {
@@ -69,7 +77,7 @@ nav ul a {
 }
 
 nav ul a:hover {
-  background-color: grey;
+  background-color: #45a049;
 }
 
 nav ul {
@@ -80,6 +88,13 @@ nav ul {
   margin: 0;
   list-style-type: none;
   background-color: green;
+}
+
+nav img {
+  margin-bottom: 10px; /* Adds spacing between the logo and the nav links */
+  width: 150px;
+  height: 150px;
+  object-fit: contain; /* Ensures the logo maintains its aspect ratio */
 }
 
 footer {
@@ -94,6 +109,7 @@ footer {
   align-items: center;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 /* Forms */
@@ -120,7 +136,7 @@ input[type='reset'] {
   padding: 8px 10px;
   border: none;
   border-radius: 4px;
-  background-color: #4caf50;
+  background-color: green;
   color: white;
   cursor: pointer;
   margin-right: 5px;
