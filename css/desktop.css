@@ -14,12 +14,6 @@ main {
 
 nav,
 footer {
-  border-style: dotted;
-  border-color: #c90721;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100px;
   height: auto;
 }
@@ -30,53 +24,8 @@ header h1 {
 }
 
 /* Layout */
-
 .container {
-  flex-direction: row;
-  display: flex;
-}
-
-.container-animation {
-  height: 65vh;
-}
-
-.center-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-}
-
-.center-container h2 {
-  margin-bottom: 0;
-}
-
-article section {
-  text-align: left;
-  width: 100%;
-}
-
-article {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1 1 75%;
   padding: 10px;
-}
-
-aside {
-  flex: 1 1 20%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-}
-
-footer {
-  flex: 1 1 90%;
-  height: 150px;
-  margin-top: auto;
-  text-align: center;
 }
 
 /* Navigation */
@@ -109,6 +58,7 @@ nav ul a {
   color: white;
   background-color: green;
   border-right: 1px solid white;
+
   padding: 5px;
   text-align: center;
 }
@@ -129,6 +79,7 @@ footer {
   align-items: center;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 /* Forms */
@@ -166,59 +117,4 @@ input[type='reset'] {
 input[type='submit']:hover,
 input[type='reset']:hover {
   background-color: #45a049;
-}
-
-/* Tables */
-table {
-  width: 70%;
-  margin: 50px auto;
-  border-collapse: collapse;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-th,
-td {
-  padding: 15px;
-  text-align: center;
-  border: 1px solid #ddd;
-}
-
-thead {
-  background-color: #4caf50;
-  color: white;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-tbody tr:hover {
-  background-color: #ddd;
-}
-
-caption {
-  font-size: 1.5em;
-  margin: 10px 0;
-  text-align: center;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Images and Animations */
-#aside-penguin {
-  width: 200px;
-}
-
-#profile {
-  opacity: 0;
-  animation: fadeIn 2s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
