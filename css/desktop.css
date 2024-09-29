@@ -101,6 +101,13 @@ footer {
   color: white;
 }
 
+/* Nav active state */
+.navbar .active a {
+  background-color: #45a049; /* Same green color */
+}
+
+/* Homepage Styles */
+
 /* Forms */
 form {
   max-width: 600px;

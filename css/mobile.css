@@ -106,6 +106,23 @@ footer {
   color: white;
 }
 
+/* Nav active state */
+.navbar .active a {
+  background-color: green; /* Same green color */
+  color: white;
+  border-radius: 5px;
+}
+
+/* Homepage Styles */
+
+.pizza-menu {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
+  gap: 20px; /* Maintain the gap between items */
+  max-width: 100%; /* Optional: Make sure it takes full width */
+  margin: 0 auto; /* Center it horizontally */
+}
+
 /* Forms */
 form {
   max-width: 100%;
