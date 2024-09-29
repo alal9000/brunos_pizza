@@ -1,14 +1,8 @@
 /* General Styles */
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
 
 body {
   font-family: Arial, sans-serif;
   color: #333;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -122,10 +116,13 @@ form {
 }
 
 input[type='text'],
+input[type='address'],
 input[type='email'],
-textarea {
+input[type='tel'],
+input[type='number'],
+input[type='password'] {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;

@@ -15,6 +15,7 @@
   <main>
     <!-- Nav -->
     <nav>
+      <img src="images/logo.png" alt="Bruno's-Pizza-Logo" class="nav-logo">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="register.html">Register</a></li>
@@ -29,21 +30,49 @@
 
     <div class="center-container">
       <p>Register with us to place online orders!</p>
-      <p>fill out the form here</p>
+      <p>Fill out the form here</p>
     </div>
 
-    <form id="contact" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/surveytest.php">
+    <form id="regform" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
       <p>
-        <label for="name">Full Name (optional)</label>
-        <input type="text" id="name" name="fname" size="20" />
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" />
       </p>
       <p>
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required />
+        <label for="name">User Name:</label>
+        <input type="text" id="uname" name="uname" />
       </p>
       <p>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+      </p>
+      <p>
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+      </p>
+      <p>
+        <label for="favorite-item">Favorite Pizza:</label><br>
+        <input type="checkbox" id="margherita" name="favorite-item" value="margherita" />
+        <label for="margherita">Margherita</label><br>
+
+        <input type="checkbox" id="pepperoni" name="favorite-item" value="pepperoni" />
+        <label for="pepperoni">Pepperoni</label><br>
+
+        <input type="checkbox" id="veggie" name="favorite-item" value="veggie" />
+        <label for="veggie">Veggie</label><br>
+
+        <input type="checkbox" id="cheese" name="favorite-item" value="cheese" />
+        <label for="bbq-chicken">Cheese</label><br>
+
+        <input type="checkbox" id="supreme" name="favorite-item" value="supreme" />
+        <label for="bbq-chicken">Supreme</label><br>
+
+        <input type="checkbox" id="hawaiian" name="favorite-item" value="hawaiian" />
+        <label for="hawaiian">Hawaiian</label>
       </p>
       <p>
         <input type="submit" value="Submit" />
@@ -55,6 +84,74 @@
   <footer>
     &copy; 2024 - Bruno's Pizza
   </footer>
+
+  <script>
+    function validateRegister() {
+      var email = document.getElementById("email").value;
+      var username = document.getElementById("uname").value;
+      var password = document.getElementById("password").value;
+      var genm = document.getElementById("male").checked;
+      var genf = document.getElementById("female").checked;
+
+      // validation for checkboxes
+      var pizzaOptions = document.querySelectorAll('input[name="favorite-item"]'); 
+      var pizzaSelected = false;
+
+      pizzaOptions.forEach(function(pizza) {
+        if (pizza.checked) {
+            pizzaSelected = true; // Set to true if at least one pizza is selected
+        }
+      });
+
+      var errMsg = "";
+      var result = true;
+      var pattern = /^.{9,}$/;
+
+      // check for empty fields
+      if (email == "") {
+        errMsg += "email cannot be empty.\n";
+      }
+
+      if (username == "") {
+        errMsg += "username cannot be empty.\n";
+      }
+
+      if (password == "") {
+        errMsg += "password cannot be empty.\n";
+      }
+
+      if (!password.match(pattern)) {
+      errMsg += "password must be at least 9 characters.\n";
+      }
+
+      if (uname == "") {
+        errMsg += "User name cannot be empty.\n";
+      }
+
+      if ((genm == "") && (genf == "")) {
+        errMsg += "A gender must be selected.\n";
+      }
+
+      if (!pizzaSelected) {
+        errMsg += "At least one pizza must be selected.\n";
+      }
+
+      /* Display error message any error(s) is/are detected */
+      if (errMsg != "") {
+        alert(errMsg);
+        result = false;
+      }
+
+      return result;
+    }
+
+    function init() {
+      var regForm = document.getElementById("regform");
+      regForm.onsubmit = validateRegister;
+    }
+
+    window.onload = init;
+  </script>
 
 </body>
 
