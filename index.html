@@ -17,9 +17,7 @@
       margin-bottom: 20px;
     }
 
-    h1 {
-      color: green;
-    }
+    
 
     .pizza-menu {
       display: grid;
@@ -31,6 +29,11 @@
       /* Optional: Limit the width of the menu */
       margin: auto;
       /* Center the grid */
+    }
+
+    .pizza-menu a {
+      text-decoration: none; /* Removes underline */
+      color: inherit; /* Keeps the color of the surrounding element (the default text color) */
     }
 
 
@@ -56,7 +59,12 @@
     }
 
     h2 {
+      
       color: #333;
+    }
+
+    #menu-headline {
+      text-align: center;
     }
 
     .price {
@@ -94,6 +102,7 @@ aside {
       <li><a href="index.html">Home</a></li>
       <li><a href="register.html">Register</a></li>
       <li><a href="order.html">Order</a></li>
+      <li><a href="features.html">Features</a></li>
     </ul>
   </nav>
 
@@ -106,49 +115,61 @@ aside {
     <div class="container">
 
       <!-- Section 1 Menu -->
-       <h2>Our Pizza Menu</h2>
+       <h2 id="menu-headline">Our Pizza Menu</h2>
       <section class="pizza-menu">
-        <article class="pizza-item">
-          <h3>Hawaiian Pizza</h3>
-          <img src="images/hawaiian.jpg" alt="Hawaiian Pizza">
-          <p>Topped with ham, pineapple, and mozzarella cheese.</p>
-          <span class="price">$12.99</span>
-        </article>
+        <a href="order.html">
+          <article class="pizza-item">
+            <h3>Hawaiian Pizza</h3>
+            <img src="images/hawaiian.jpg" alt="Hawaiian Pizza">
+            <p>Topped with ham, pineapple, and mozzarella cheese.</p>
+            <span class="price">$12.99</span>
+          </article>
+        </a>
 
-        <article class="pizza-item">
-          <h3>Pepperoni Pizza</h3>
-          <img src="images/pepperoni.jpg" alt="Pepperoni Pizza">
-          <p>Classic pepperoni with a blend of mozzarella and marinara sauce.</p>
-          <span class="price">$13.99</span>
-        </article>
+        <a href="order.html">
+          <article class="pizza-item">
+            <h3>Pepperoni Pizza</h3>
+            <img src="images/pepperoni.jpg" alt="Pepperoni Pizza">
+            <p>Classic pepperoni with a blend of mozzarella and marinara sauce.</p>
+            <span class="price">$13.99</span>
+          </article>
+        </a>
 
-        <article class="pizza-item">
-          <h3>Cheese Pizza</h3>
-          <img src="images/cheese.jpg" alt="Cheese Pizza">
-          <p>Simple and delicious with our house marinara and mozzarella cheese.</p>
-          <span class="price">$10.99</span>
-        </article>
+        <a href="order.html">
+          <article class="pizza-item">
+            <h3>Cheese Pizza</h3>
+            <img src="images/cheese.jpg" alt="Cheese Pizza">
+            <p>Simple and delicious with our house marinara and mozzarella cheese.</p>
+            <span class="price">$10.99</span>
+          </article>
+        </a>
 
-        <article class="pizza-item">
-          <h3>Vegetarian Pizza</h3>
-          <img src="images/vege.jpg" alt="Vegetarian Pizza">
-          <p>Loaded with fresh veggies, including bell peppers, onions, and mushrooms.</p>
-          <span class="price">$14.99</span>
-        </article>
+        <a href="order.html">
+          <article class="pizza-item">
+            <h3>Vegetarian Pizza</h3>
+            <img src="images/vege.jpg" alt="Vegetarian Pizza">
+            <p>Loaded with fresh veggies, including bell peppers, onions, and mushrooms.</p>
+            <span class="price">$14.99</span>
+          </article>
+        </a>
 
-        <article class="pizza-item">
-          <h3>Margherita Pizza</h3>
-          <img src="images/marg.jpg" alt="Margherita Pizza">
-          <p>A classic with fresh mozzarella, tomatoes, and basil leaves.</p>
-          <span class="price">$11.99</span>
-        </article>
+        <a href="order.html">
+          <article class="pizza-item">
+            <h3>Margherita Pizza</h3>
+            <img src="images/marg.jpg" alt="Margherita Pizza">
+            <p>A classic with fresh mozzarella, tomatoes, and basil leaves.</p>
+            <span class="price">$11.99</span>
+          </article>
+        </a>
 
-        <article class="pizza-item">
-          <h3>Supreme Pizza</h3>
-          <img src="images/supreme.jpg" alt="Supreme Pizza">
-          <p>olives, cheese, tomatoes, ham and pepperoni</p>
-          <span class="price">$11.99</span>
-        </article>
+        <a href="order.html">
+          <article class="pizza-item">
+            <h3>Supreme Pizza</h3>
+            <img src="images/supreme.jpg" alt="Supreme Pizza">
+            <p>olives, cheese, tomatoes, ham and pepperoni</p>
+            <span class="price">$11.99</span>
+          </article>
+        </a>
       </section>
 
       <div class="content-container">
