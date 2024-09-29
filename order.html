@@ -20,6 +20,7 @@
 
     #delivery-address, #credit-card-info {
       opacity: 0;
+      overflow: hidden;
       max-height: 0;
       transition: opacity 0.5s ease, max-height 0.5s ease;
     }
@@ -27,6 +28,7 @@
     #delivery-address.show, #credit-card-info.show {
       opacity: 1;
       max-height: 500px;
+      overflow: auto;
       transition: opacity 0.5s ease, max-height 0.5s ease;
     }
   </style>
@@ -63,11 +65,11 @@
       <p>
         <label for="delivery-method">Delivery or Pick-up:</label><br>
         <input type="radio" id="pickup" name="delivery-method" value="pickup" checked onclick="toggleAddress(false)"
-          required />
+         />
         <label for="pickup">Pick-up</label><br>
 
         <input type="radio" id="delivery" name="delivery-method" value="delivery" onclick="toggleAddress(true)"
-          required />       
+         />       
         <label for="delivery">Delivery</label>
       </p>
 
@@ -87,7 +89,7 @@
 
       <p>
         <label for="message">Your Order:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea id="message" name="message" rows="4" ></textarea>
       </p>
 
       
@@ -95,29 +97,29 @@
 
       <p>
         <label for="billing-address">Billing Address:</label>
-        <input type="text" id="billing-address" name="billing-address" required />
+        <input type="text" id="billing-address" name="billing-address" />
       </p>
 
 
       <p>
         <label for="contact-number">Contact Number:</label>
-        <input type="tel" id="contact-number" name="contact-number" required />
+        <input type="tel" id="contact-number" name="contact-number" />
       </p>
 
 
       <p>
         <label for="email">Email for Receipt:</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" />
       </p>
 
       <p>
         <label for="payment-method">Payment Method:</label><br>
         <input type="radio" id="pay-on-pickup" name="payment-method" checked value="pay-on-pickup"
-          onclick="togglePayment(false)" required />
+          onclick="togglePayment(false)" />
         <label for="pay-on-pickup">Pay on Pick-up</label><br>
 
         <input type="radio" id="pay-online" name="payment-method" value="pay-online" onclick="togglePayment(true)"
-          required />
+           />
         <label for="pay-online">Pay Online</label>
       </p>
 
@@ -171,6 +173,70 @@
       else
         creditCardInfo.classList.remove('show');
     }
+
+    function validateOrder() {
+      var delivery = document.getElementById("delivery").checked;
+      var postcode = document.getElementById("postcode").value;
+      var name = document.getElementById("name").value;
+      var order = document.getElementById("message").value;
+      var billingAddress = document.getElementById("billing-address").value;
+      var contactNumber = document.getElementById("contact-number").value;
+      var email = document.getElementById("email").value;
+      
+
+      var errMsg = "";
+      var result = true;
+      var pattern = /^\d{4}$/;
+
+      // check for empty fields
+
+      if (delivery) { // Check postcode only if delivery option is selected
+        if (!postcode.match(pattern)) {
+          errMsg += "Postcode must be exactly 4 digits.\n";
+        }
+      }
+      
+      if (name == "") {
+        errMsg += "name cannot be empty.\n";
+      }
+
+      if (order == "") {
+        errMsg += "order cannot be empty.\n";
+      }
+
+      if (billingAddress == "") {
+        errMsg += "billing address cannot be empty.\n";
+      }
+
+      if (contactNumber == "") {
+        errMsg += "contact number cannot be empty.\n";
+      }
+
+      if (email == "") {
+        errMsg += "email cannot be empty.\n";
+      }
+
+      
+
+      /* Display error message any error(s) is/are detected */
+      if (errMsg != "") {
+        alert(errMsg);
+        result = false;
+      }
+
+      return result;
+
+
+    }
+
+    function init() {
+      var orderForm = document.getElementById("order-form");
+      orderForm.onsubmit = validateOrder;
+    }
+
+    window.onload = init;
+
+
   </script>
 
 </body>
