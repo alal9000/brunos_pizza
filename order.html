@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 767px)">
   <script src="js/script.js"></script>
   <style>
-
     #message {
       width: 100%;
       padding: 10px;
@@ -18,14 +17,16 @@
       box-sizing: border-box;
     }
 
-    #delivery-address, #credit-card-info {
+    #delivery-address,
+    #credit-card-info {
       opacity: 0;
       overflow: hidden;
       max-height: 0;
       transition: opacity 0.5s ease, max-height 0.5s ease;
     }
 
-    #delivery-address.show, #credit-card-info.show {
+    #delivery-address.show,
+    #credit-card-info.show {
       opacity: 1;
       max-height: 500px;
       overflow: auto;
@@ -33,30 +34,30 @@
     }
   </style>
 
-  
+
 
 </head>
 
 <body>
 
-  
-    <!-- Nav -->
-    <nav>
-      <img src="images/logo.png" alt="Bruno's-Pizza-Logo" class="nav-logo">
-      <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="order.html">Order</a></li>
-        <li><a href="features.html">Features</a></li>
-      </ul>
-    </nav>
 
-    <!-- Header -->
-    <header>
-      <h1>Order</h1>
-    </header>
+  <!-- Nav -->
+  <nav>
+    <img src="images/logo.png" alt="Bruno's-Pizza-Logo" class="nav-logo">
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="features.html">Features</a></li>
+    </ul>
+  </nav>
 
-    <main>
+  <!-- Header -->
+  <header>
+    <h1>Order</h1>
+  </header>
+
+  <main>
 
     <div class="center-container">
       <p>We would love to take your order</p>
@@ -67,12 +68,10 @@
 
       <p>
         <label for="delivery-method">Delivery or Pick-up:</label><br>
-        <input type="radio" id="pickup" name="delivery-method" value="pickup" checked onclick="toggleAddress(false)"
-         />
+        <input type="radio" id="pickup" name="delivery-method" value="pickup" checked onclick="toggleAddress(false)" />
         <label for="pickup">Pick-up</label><br>
 
-        <input type="radio" id="delivery" name="delivery-method" value="delivery" onclick="toggleAddress(true)"
-         />       
+        <input type="radio" id="delivery" name="delivery-method" value="delivery" onclick="toggleAddress(true)" />
         <label for="delivery">Delivery</label>
       </p>
 
@@ -92,10 +91,10 @@
 
       <p>
         <label for="message">Your Order:</label>
-        <textarea id="message" name="message" rows="4" ></textarea>
+        <textarea id="message" name="message" rows="4"></textarea>
       </p>
 
-      
+
 
 
       <p>
@@ -122,13 +121,21 @@
           onclick="togglePayment(false)" />
         <label for="pay-on-pickup">Pay on Pick-up</label><br>
 
-        <input type="radio" id="pay-online" name="payment-method" value="pay-online" onclick="togglePayment(true)"
-           />
+        <input type="radio" id="pay-online" name="payment-method" value="pay-online" onclick="togglePayment(true)" />
         <label for="pay-online">Pay Online</label>
       </p>
 
       <!-- Only shown if user selects "Pay Online" radio button -->
       <div id="credit-card-info">
+        <p>
+          <label for="card-type">Card Type:</label>
+          <select id="card-type" name="card-type" onchange="updateCardNumberLength()">
+            <option value="">Select Card Type</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="amex">American Express</option>
+          </select>
+        </p>
         <p>
           <label for="card-name">Name on Card:</label>
           <input type="text" id="card-name" name="card-name" />
@@ -186,7 +193,7 @@
       var billingAddress = document.getElementById("billing-address").value;
       var contactNumber = document.getElementById("contact-number").value;
       var email = document.getElementById("email").value;
-      
+
 
       var errMsg = "";
       var result = true;
@@ -199,7 +206,7 @@
           errMsg += "Postcode must be exactly 4 digits.\n";
         }
       }
-      
+
       if (name == "") {
         errMsg += "name cannot be empty.\n";
       }
@@ -220,7 +227,7 @@
         errMsg += "email cannot be empty.\n";
       }
 
-      
+
 
       /* Display error message any error(s) is/are detected */
       if (errMsg != "") {
@@ -242,20 +249,40 @@
       if (sameAsDeliveryCheckbox.checked) {
         if (deliveryAddress === "") {
           alert("Please enter your delivery address first.");
-          sameAsDeliveryCheckbox.checked = false; 
-          billingAddress.value = ""; 
+          sameAsDeliveryCheckbox.checked = false;
+          billingAddress.value = "";
         } else {
-          billingAddress.value = deliveryAddress; 
+          billingAddress.value = deliveryAddress;
         }
       } else {
         billingAddress.value = "";
       }
     }
 
+    // adjust the length of credit card number field based on user selection
+    function updateCardNumberLength() {
+      const cardTypeSelect = document.getElementById('card-type');
+      const cardNumberInput = document.getElementById('card-number');
+
+      // Get the selected card type
+      const selectedCardType = cardTypeSelect.value;
+
+      // Set the maxlength based on the selected card type
+      if (selectedCardType === 'amex') {
+        cardNumberInput.setAttribute('maxlength', '15');
+
+      } else {
+        cardNumberInput.setAttribute('maxlength', '16');
+
+      }
+    }
+
+
 
     function init() {
       var orderForm = document.getElementById("order-form");
       orderForm.onsubmit = validateOrder;
+      updateCardNumberLength();
     }
 
     window.onload = init;
