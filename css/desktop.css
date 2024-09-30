@@ -1,9 +1,10 @@
 /* General */
 body {
   font-family: Arial, sans-serif;
-  color: #333;
+  color: #444;
   margin: 0;
   padding: 0;
+  background-color: #fff8e6;
 }
 
 main {
@@ -24,6 +25,10 @@ header h1 {
 
 h1 {
   color: green;
+}
+
+form {
+  background-color: #f0f0f0;
 }
 
 /* Layout */

@@ -100,9 +100,10 @@
 
       <p>
         <label for="billing-address">Billing Address:</label>
+        <input type="checkbox" id="same-as-delivery" name="same-as-delivery" onclick="copyAddress()" />
+        <label for="same-as-delivery"><em>Same as delivery address</em></label>
         <input type="text" id="billing-address" name="billing-address" />
       </p>
-
 
       <p>
         <label for="contact-number">Contact Number:</label>
@@ -231,6 +232,26 @@
 
 
     }
+
+    // copy delivery address to billing address if filled out
+    function copyAddress() {
+      const deliveryAddress = document.getElementById("address").value;
+      const billingAddress = document.getElementById("billing-address");
+      const sameAsDeliveryCheckbox = document.getElementById("same-as-delivery");
+
+      if (sameAsDeliveryCheckbox.checked) {
+        if (deliveryAddress === "") {
+          alert("Please enter your delivery address first.");
+          sameAsDeliveryCheckbox.checked = false; 
+          billingAddress.value = ""; 
+        } else {
+          billingAddress.value = deliveryAddress; 
+        }
+      } else {
+        billingAddress.value = "";
+      }
+    }
+
 
     function init() {
       var orderForm = document.getElementById("order-form");
