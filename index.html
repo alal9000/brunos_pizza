@@ -74,21 +74,19 @@
       color: #c90721;
     }
 
-    .content-container {
-    display: flex; /* Enables flexbox */
-    flex-direction: row; /* Align children in a row */
-    justify-content: space-between; /* Space between sections and aside */
-    align-items: flex-start; /* Align items at the start of the container */
-    margin: 20px; /* Add margin if needed */
+.content-container {
+  display: flex;
+  margin: 20px;
+  gap: 20px;
 }
 
-section {
-    flex: 1; /* Allows sections to grow and take available space */
-    margin-right: 20px; /* Space between the two sections */
+section, aside {
+    padding: 10px;
 }
 
 aside {
-    width: 200px; /* Set a fixed width for the aside */
+    background-color: #f0f0f0; 
+    border: 1px solid #c90721;
 }
   </style>
 </head>
@@ -173,22 +171,28 @@ aside {
       </section>
 
       <div class="content-container">
-        <!-- Section 2 History -->
+        <!-- Section 1 History -->
         <section>
             <h2>History</h2>
-            <p>Our location</p>
+            <p>
+                Established in 1894 in the heart of Naples, Italy, we began as a humble family-owned pizzeria, serving traditional, wood-fired pizzas crafted with recipes passed down through generations.
+            </p>
         </section>
     
         <!-- Section 2 Location -->
         <section>
             <h2>Location</h2>
-            <p>We are based in Sydney CBD</p>
+            <p>
+                Located in the vibrant Sydney CBD, our restaurant is a cozy haven off the main street where tradition meets modern comfort. Whether you're taking a break from work, exploring the city, or simply craving authentic Italian cuisine, we're just a short walk away.
+            </p>
         </section>
     
         <!-- Aside -->
         <aside>
-            <h2>Two For One Deal</h2>
-            <p>Buy two pizzas and get your third completely free!</p>
+            <h2>Buy Two Pizza's Get One Free!</h2>
+            <p>
+                Craving more? We've got you covered! For a limited time, enjoy our special offer: buy two of our delicious pizzas, and get the third one absolutely free!
+            </p>
         </aside>
     </div>
 
