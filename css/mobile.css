@@ -28,6 +28,7 @@ h1 {
 
 form {
   background-color: #f0f0f0;
+  margin: 20px;
 }
 
 /* Layout */
@@ -169,4 +170,33 @@ input[type='reset'] {
 input[type='submit']:hover,
 input[type='reset']:hover {
   background-color: #45a049;
+}
+
+#message {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit; /* Add this line */
+  color: #444; /* Match the text color */
+  background-color: #fff; /* Match background */
+}
+
+/* accessability styles */
+
+.skip-link {
+  position: absolute;
+  top: -40px; /* Move off-screen */
+  left: 0;
+  background: #111; /* Background color */
+  color: white; /* Text color */
+  padding: 8px; /* Padding for click area */
+  text-decoration: none; /* Remove underline */
+  transition: top 0.3s; /* Smooth transition */
+}
+
+.skip-link:focus,
+.skip-link:hover {
+  top: 10px; /* Move into view when focused or hovered */
 }
