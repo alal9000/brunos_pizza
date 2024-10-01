@@ -1,8 +1,10 @@
-hawaiian pizza - https://myfoodbook.com.au/recipes/show/hawaiian-pizza-1
-pepperoni pizza - https://grandbaby-cakes.com/pepperoni-pizza/
-cheese pizza - https://thestayathomechef.com/easy-cheese-pizza/
-vege pizza - https://www.vindulge.com/vegetarian-pizza/
-marg - https://www.jocooks.com/recipes/margherita-pizza/
-supreme - https://goodcheapeats.com/supreme-pizza-recipe/
+Pizza Image References:
 
-logo was made via Canvas logo maker - https://www.canva.com/create/logos/
+- [Hawaiian Pizza](https://myfoodbook.com.au/recipes/show/hawaiian-pizza-1)
+- [Pepperoni Pizza](https://grandbaby-cakes.com/pepperoni-pizza/)
+- [Cheese Pizza](https://thestayathomechef.com/easy-cheese-pizza/)
+- [Vegetarian Pizza](https://www.vindulge.com/vegetarian-pizza/)
+- [Margherita Pizza](https://www.jocooks.com/recipes/margherita-pizza/)
+- [Supreme Pizza](https://goodcheapeats.com/supreme-pizza-recipe/)
+
+Logo was created using [Canva's logo maker](https://www.canva.com/create/logos/)

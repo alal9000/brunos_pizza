@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
+// function to highlight the current page in the navigation
+function highlightMenu() {
   // Get the current URL path
-
   const currentPath = window.location.pathname.substring(1);
 
   // Get all nav items
@@ -15,4 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
       item.classList.add('active');
     }
   });
-});
+}
+
+function init() {
+  highlightMenu();
+}
+
+window.onload = init;
