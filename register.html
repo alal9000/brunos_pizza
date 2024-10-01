@@ -96,12 +96,12 @@
       var genf = document.getElementById("female").checked;
 
       // validation for checkboxes
-      var pizzaOptions = document.querySelectorAll('input[name="favorite-item"]'); 
+      var pizzaOptions = document.querySelectorAll('input[name="favorite-item"]');
       var pizzaSelected = false;
 
-      pizzaOptions.forEach(function(pizza) {
+      pizzaOptions.forEach(function (pizza) {
         if (pizza.checked) {
-            pizzaSelected = true; // Set to true if at least one pizza is selected
+          pizzaSelected = true; // Set to true if at least one pizza is selected
         }
       });
 
@@ -123,7 +123,7 @@
       }
 
       if (!password.match(pattern)) {
-      errMsg += "password must be at least 9 characters.\n";
+        errMsg += "password must be at least 9 characters.\n";
       }
 
       if (uname == "") {
@@ -154,7 +154,7 @@
 
     window.onload = init;
   </script>
- 
+
 
 </body>
 

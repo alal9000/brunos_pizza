@@ -8,89 +8,10 @@
 
   <title>Bruno's Pizza</title>
 
-  <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width: 768px)">
   <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 767px)">
+  <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width: 768px)">
   <script src="js/script.js"></script>
-  <style>
-    header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
 
-    
-
-    .pizza-menu {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      /* Two equal columns */
-      gap: 20px;
-      /* Space between grid items */
-      max-width: 800px;
-      /* Optional: Limit the width of the menu */
-      margin: auto;
-      /* Center the grid */
-    }
-
-    .pizza-menu a {
-      text-decoration: none; /* Removes underline */
-      color: inherit; /* Keeps the color of the surrounding element (the default text color) */
-    }
-
-
-
-    .pizza-item {
-      background-color: white;
-      border: 2px solid #c90721;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
-    }
-
-    .pizza-item img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px; 
-    }
-
-    .pizza-item:hover {
-      transform: scale(1.05);
-    }
-
-    h2 {
-      
-      color: #333;
-    }
-
-    #menu-headline {
-      text-align: center;
-    }
-
-    .price {
-      display: block;
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #c90721;
-    }
-
-    .content-container {
-      display: flex;
-      margin: 20px;
-      gap: 20px;
-    }
-
-    section, aside {
-        padding: 10px;
-    }
-
-    aside {
-        background-color: #f0f0f0; 
-        border: 1px solid #c90721;
-    }
-
-      
-  </style>
 </head>
 
 <body>
@@ -116,7 +37,7 @@
     <div class="container">
 
       <!-- Section 1 Menu -->
-       <h2 id="menu-headline">Our Pizza Menu</h2>
+      <h2 id="menu-headline">Our Pizza Menu</h2>
       <section class="pizza-menu">
         <a href="order.html">
           <article class="pizza-item">
@@ -176,28 +97,32 @@
       <div class="content-container">
         <!-- Section 1 History -->
         <section>
-            <h2>History</h2>
-            <p>
-                Established in 1894 in the heart of Naples, Italy, we began as a humble family-owned pizzeria, serving traditional, wood-fired pizzas crafted with recipes passed down through generations.
-            </p>
+          <h2>History</h2>
+          <p>
+            Established in 1894 in the heart of Naples, Italy, we began as a humble family-owned pizzeria, serving
+            traditional, wood-fired pizzas crafted with recipes passed down through generations.
+          </p>
         </section>
-    
+
         <!-- Section 2 Location -->
         <section>
-            <h2>Location</h2>
-            <p>
-                Located in the vibrant Sydney CBD, our restaurant is a cozy haven off the main street where tradition meets modern comfort. Whether you're taking a break from work, exploring the city, or simply craving authentic Italian cuisine, we're just a short walk away.
-            </p>
+          <h2>Location</h2>
+          <p>
+            Located in the vibrant Sydney CBD, our restaurant is a cozy haven off the main street where tradition meets
+            modern comfort. Whether you're taking a break from work, exploring the city, or simply craving authentic
+            Italian cuisine, we're just a short walk away.
+          </p>
         </section>
-    
+
         <!-- Aside -->
         <aside>
-            <h2>Buy Two Pizza's Get One Free!</h2>
-            <p>
-                Craving more? We've got you covered! For a limited time, enjoy our special offer: buy two of our delicious pizzas, and get the third one absolutely free!
-            </p>
+          <h2>Buy Two Pizza's Get One Free!</h2>
+          <p>
+            Craving more? We've got you covered! For a limited time, enjoy our special offer: buy two of our delicious
+            pizzas, and get the third one absolutely free!
+          </p>
         </aside>
-    </div>
+      </div>
 
     </div>
   </main>

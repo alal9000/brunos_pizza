@@ -1,4 +1,4 @@
-/* General */
+/* GENERAL / GLOBAL STYLES */
 body {
   font-family: Arial, sans-serif;
   color: #444;
@@ -24,11 +24,7 @@ h1 {
   font-size: 2em;
 }
 
-form {
-  background-color: #f0f0f0;
-}
-
-/* Layout */
+/* LAYOUT */
 .container {
   padding: 10px;
 }
@@ -41,7 +37,12 @@ form {
   margin: 20px;
 }
 
-/* Navigation */
+/* push footer down to bottom of page on features page */
+.features {
+  min-height: 70vh;
+}
+
+/* NAVIGATION */
 
 nav {
   background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0.5));
@@ -72,20 +73,25 @@ nav ul a {
   color: white;
   background-color: green;
   border-right: 1px solid white;
-
   padding: 5px;
   text-align: center;
 }
 
+/* navbar hover effect  */
 nav ul a:hover {
   background-color: #45a049;
 }
 
+/* nav active state */
+.navbar .active a {
+  background-color: #45a049;
+}
+
 nav img {
-  margin-bottom: 10px; /* Adds spacing between the logo and the nav links */
+  margin-bottom: 10px;
   width: 150px;
   height: 150px;
-  object-fit: contain; /* Ensures the logo maintains its aspect ratio */
+  object-fit: contain;
 }
 
 footer {
@@ -103,14 +109,7 @@ footer {
   color: white;
 }
 
-/* Nav active state */
-.navbar .active a {
-  background-color: #45a049; /* Same green color */
-}
-
-/* Homepage Styles */
-
-/* Forms */
+/* FORMS */
 form {
   max-width: 600px;
   margin: auto;
@@ -118,9 +117,11 @@ form {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* style inputs */
 input[type='text'],
 input[type='address'],
 input[type='email'],
@@ -150,31 +151,136 @@ input[type='reset']:hover {
   background-color: #45a049;
 }
 
-#message {
+/* order textarea */
+#order {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: inherit; /* Add this line */
-  color: #444; /* Match the text color */
-  background-color: #fff; /* Match background */
+  font-family: inherit;
+  color: #444;
+  background-color: #fff;
 }
 
-/* accessability styles */
+/* ACCESSABILITY STYLES */
 
 .skip-link {
   position: absolute;
-  top: -40px; /* Move off-screen */
+  top: -40px;
   left: 0;
-  background: #111; /* Background color */
-  color: white; /* Text color */
-  padding: 8px; /* Padding for click area */
-  text-decoration: none; /* Remove underline */
-  transition: top 0.3s; /* Smooth transition */
+  background: #111;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  transition: top 0.3s;
 }
 
 .skip-link:focus,
 .skip-link:hover {
-  top: 10px; /* Move into view when focused or hovered */
+  top: 10px;
+}
+
+/* HOMEPAGE STYLES */
+
+/* use css two column grid layout for menu */
+.pizza-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* style grid items */
+.pizza-item {
+  background-color: white;
+  border: 2px solid #c90721;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.pizza-menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pizza-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* pop out menu items when hovered */
+.pizza-item:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  color: #333;
+}
+
+#menu-headline {
+  text-align: center;
+}
+
+.price {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #c90721;
+}
+
+.content-container {
+  display: flex;
+  margin: 20px;
+  gap: 20px;
+}
+
+section,
+aside {
+  padding: 10px;
+}
+
+aside {
+  background-color: #f0f0f0;
+  border: 1px solid #c90721;
+}
+
+/* Order page */
+
+#delivery-address,
+#credit-card-info {
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+#delivery-address.show,
+#credit-card-info.show {
+  opacity: 1;
+  max-height: 500px;
+  overflow: auto;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+  color: #444;
+  background-color: #fff;
+}
+
+select option {
+  padding: 10px;
+  background-color: #fff;
+  color: #444;
 }
