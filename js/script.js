@@ -21,4 +21,4 @@ function init() {
   highlightMenu();
 }
 
-window.onload = init;
+window.addEventListener('load', init);

@@ -37,10 +37,6 @@ function validateRegister() {
     errMsg += 'password must be at least 9 characters.\n';
   }
 
-  if (uname == '') {
-    errMsg += 'User name cannot be empty.\n';
-  }
-
   if (genm == '' && genf == '') {
     errMsg += 'A gender must be selected.\n';
   }
@@ -63,4 +59,4 @@ function init() {
   regForm.onsubmit = validateRegister;
 }
 
-window.onload = init;
+window.addEventListener('load', init);

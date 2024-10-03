@@ -103,4 +103,4 @@ function init() {
   updateCardNumberLength();
 }
 
-window.onload = init;
+window.addEventListener('load', init);
