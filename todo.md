@@ -1,3 +1,0 @@
--port over JS to external file
--check html and comments
--check marking guide and submit
